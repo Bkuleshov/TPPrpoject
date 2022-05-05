@@ -1,20 +1,23 @@
 #include "Game.h"
 
-Game::Game() {
-  player.push_back(Player(150, "player1"));
-  player.push_back(Player(150, "player2"));
+Game::Game(int n) {
+  for (int i = 0; i < n; ++i) {
+    std::string id = "player";
+    id += std::to_string(i + 1);
+    player.push_back(Player(150, id));
+  }
   factory = UnitFactory();
 }
 
 void Game::launch() {
-  //Observer* observer = new Oibserver(this);
+  Observer observer = Observer();
   std::map<std::string, Command*> commands;
   commands["attack"] = new AttackUnit();
   commands["work"] = new Work();
   commands["buy"] = new BuyUnit();
   std::cout << "Welcome! Let's start the game. \n";
   for (int j = 0; j < 10; ++j) {
-    for (int i = 0; i < 2; ++i) {
+    for (int i = 0; i < player.size(); ++i) {
       while (true) {
         std::cout << "Please enter your command \n";
         std::string command;
@@ -45,6 +48,9 @@ void Game::launch() {
         else {
           std::cout << "Incorrect command, try again \n";
         }
+      }
+      if (observer.evaluate(*this)) {
+        return;
       }
     }
   }

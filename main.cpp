@@ -6,7 +6,14 @@
 #include "Commands/Command.h"
 
 int main() {
-  Game game = Game();
+  int n;
+  std::cout << "Enter the number of players \n";
+  std::cin >> n;
+  if (n < 2) {
+    std::cout << "Incorrect input. Try harder next time! \n";
+    return 0;
+  }
+  Game game = Game(n);
   game.launch();
 }
 

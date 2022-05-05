@@ -1,6 +1,7 @@
 #pragma once
 #include "../Game.h"
 #include "../Queries.h"
+#include<algorithm>
 
 class Game;
 

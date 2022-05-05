@@ -6,7 +6,7 @@ void Work::execute(Game& game, int playerID, std::string info) {
     std::cout << "You do not have such unit \n";
     return;
   }
-  if (game.player[playerID].army[index]->unitID[1] != 'w') {
+  if (count(info.begin(), info.end(), 'w') == 0) {
     std::cout << "This is not a worker \n";
     return;
   }

@@ -3,14 +3,9 @@ project(tp)
 set(CMAKE_CXX_STANDARD 14)
 
 add_executable(tp
-    main.cpp
     Game.h
-    Game.cpp
     Player.h
-    Player.cpp
-    Observer.h
     Queries.h
-    Queries.cpp
     UnitFactory.h
     Units/Unit.h
     Units/Worker.h
@@ -20,6 +15,11 @@ add_executable(tp
     Units/ExpensiveFighter.h
     Units/ExpensiveWorker.h
     Commands/Command.h
+    main.cpp
+    Game.cpp
+    Player.cpp
+    Observer.cpp
+    Queries.cpp
     Commands/AttackUnit.cpp
     Commands/Work.cpp
     Commands/BuyUnit.cpp
