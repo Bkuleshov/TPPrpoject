@@ -19,4 +19,8 @@ add_executable(tp
     Units/CheapWorker.h
     Units/ExpensiveFighter.h
     Units/ExpensiveWorker.h
+    Commands/Command.h
+    Commands/AttackUnit.cpp
+    Commands/Work.cpp
+    Commands/BuyUnit.cpp
 )

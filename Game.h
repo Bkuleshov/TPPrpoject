@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Observer.h"
 #include "UnitFactory.h"
+#include "Commands/Command.h"
 
 class Game {
  public:
