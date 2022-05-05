@@ -18,3 +18,4 @@ cd build
 cmake ..
 make
 ./tp
+
